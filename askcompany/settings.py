@@ -128,3 +128,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 파일을 저장할 경로 지정
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 파일 업로드 핸들러
+# 업로드 되는 파일 크기를 조절하여 웹서버에서 부하가 일어나는걸 방지
+# 파일 크기가 특정 이하일 경우 -> 메모리에 담겨 전달
+# 파일 크기가 특정 초과일 경우 -> 디스크에 담겨 전달
+# FILE_UPLOAD_MAX_MEMORY_SIZE
