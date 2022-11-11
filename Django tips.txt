@@ -1,0 +1,15 @@
+1. 장고 DB 쉘 스크립트 사용법 및 쿼리 확인하는 방법
+    1) cli에 python manage.py shell로 진입한다.
+    2) 원하는 모델 import (ex. from instagram.models import Post)
+    3) 데이터를 불러오고 변수에 담는다 (ex. querySet = Post.objects.all().filter(blabla...))
+    4) 쿼리를 찍는다 (ex. print(querySet.query))
+
+2. 장고 models.py 변경 반영
+    1) 마이그레이션 파일 생성
+        $ python manage.py makemigrations <app-name>
+    2) 마이그레이션 적용
+        $ python manage.py migrate <app-name>
+    3) 마이그레이션 적용 현황
+        $ python manage.py showmigrations <app-name>
+    4) 지정 마이그레이션 SQL 내역
+        $ python manage.py sqlmigrate <app-name> <migrate-name>
