@@ -26,3 +26,8 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # settings.py에 지정한 미디어 타입 데이터 경로에 접근할 수 있도록 url 추가
+
+    import debug_toolbar
+    urlpatterns += [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ]

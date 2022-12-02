@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Post
+from .models import Comment
 from django.utils.safestring import mark_safe
 
 # Register your models here.
@@ -29,3 +30,8 @@ class PostAdmin(admin.ModelAdmin):
     # admin.py의 클래스에서의 커스텀 컬럼은 admin 페이지 내에서만 호출 가능하다.
     # def message_length(self, post) -> str:
     #     return len(post.message)
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass

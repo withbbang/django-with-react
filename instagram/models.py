@@ -21,3 +21,13 @@ class Post(models.Model):
         return len(self.message)
     # 커스텀 컬럼명 변경
     message_length.short_description = "메세지 글자수"
+
+    class Meta:
+        ordering = ['-id']
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    message = models.TextField()
+    create_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
